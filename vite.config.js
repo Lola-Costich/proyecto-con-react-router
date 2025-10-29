@@ -1,13 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from `@tailwindcss`
+import tailwindcss from `@tailwindcss/vite`;
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  css:{
-    devSourcemap:true
-  }
+  css: {
+    devSourcemap: true,
+  },
 })
+
 
 // hacer esta config/optimización
