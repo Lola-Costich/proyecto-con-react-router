@@ -4,19 +4,25 @@ import Producto from "./pages/producto";
 import Nosotros from "./pages/nosotros";
 import Contacto from "./pages/contacto";
 import NoEncontrado from "./pages/noEncontrado";
-import NavBar from "./components/navBar";
+import Navbar from "components/Navbar";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
+      
+       <header>
+        <Navbar />
+       </header>
+      
+      <main>
+        <Routes>
         <Route path="/inicio" element={<Inicio />} />
         <Route path="/producto" element={<Producto />} />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="*" element={<NoEncontrado />} />
       </Routes>
+      </main>
     </BrowserRouter>
   )
 }
