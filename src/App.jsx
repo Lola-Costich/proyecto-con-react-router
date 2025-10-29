@@ -1,20 +1,23 @@
-import { BrowserRouter, Route, Router } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
+import Inicio from "./pages/inicio";
+import Producto from "./pages/producto";
+import Nosotros from "./pages/nosotros";
+import Contacto from "./pages/contacto";
+import NoEncontrado from "./pages/noEncontrado";
+import NavBar from "./components/navBar";
 
 export default function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <routes>
-          <Router>
-            <Route path="/inicio" element={<inicio />} />
-            <Route path="/producto" element={<producto />} />
-            <Route path="/nosotros" element={<nosotros />} />
-            <Route path="/contacto" element={<contacto />} />
-            <Route path="*" element={<noEncontrado />} />
-          </Router>
-        </routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/producto" element={<Producto />} />
+        <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="*" element={<NoEncontrado />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
